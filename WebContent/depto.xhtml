@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>insert Depto Test</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h:panelGrid columns="2">
+
+			<h:outputText value="Nome" />
+			<h:inputText id="nome" value="#{deptoBean.depto.nome}" />
+
+			<h:outputText value="Descrição" />
+			<h:inputText id="descricao" value="#{deptoBean.depto.descricao}" />
+
+			<h:commandButton value="Gravar" action="#{deptoBean.grava}" />
+			<h:commandButton value="Limpar"
+				action="#{deptoBean.limpaFormularioDoJSF}" />
+
+		</h:panelGrid>
+	</h:form>
+
+
+	<h:form>
+		<h:dataTable value="#{deptoBean.deptos}" var="depto">
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="ID" />
+				</f:facet>
+				#{depto.id}									
+				</h:column>
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Nome" />
+				</f:facet>
+				#{depto.nome}
+				</h:column>
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Descrição" />
+				</f:facet>
+				#{depto.descricao}
+			</h:column>
+
+			<h:column>
+				<f:facet name="header"><h:outputText value="Ação" /></f:facet>
+
+				<h:commandLink value="Remover" action="#{deptoBean.remove}">
+					<f:setPropertyActionListener value="#{depto}" target="#{deptoBean.depto}" />
+				</h:commandLink>
+
+			</h:column>
+		</h:dataTable>
+	</h:form>
+
+
+
+
+
+
+
+
+
+
+
+
+</h:body>
+</html>
