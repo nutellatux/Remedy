@@ -25,7 +25,7 @@ public class DeptoBean implements Serializable {
 	private Depto depto = new Depto();
 	private List<Depto> deptos; // Tem que ser Private?????
 
-	
+	 
 	
 	public void grava() {
 		Integer nulo = null;
