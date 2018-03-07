@@ -28,13 +28,10 @@ public class DeptoDao {  //TODO Como usar o Datasource no TomCat se ele é só u
 	}
 	
 	public void remove (Depto depto) {
-		Depto deptoParaRemover = busca(depto.getId());
-		this.manager.remove(deptoParaRemover);
+		this.manager.remove(depto);
 	} 
 	
-	public void altera(Depto depto) {
-		this.manager.merge(depto);
-	}
+	
 	
 	
 }
