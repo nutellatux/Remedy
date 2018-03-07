@@ -25,15 +25,24 @@ public class DeptoBean implements Serializable {
 	private Depto depto = new Depto();
 	private List<Depto> deptos; // Tem que ser Private?????
 
+	
+	
 	public void grava() {
-		this.deptoDao.adiciona(depto);
+		Integer nulo = null;
+		if (this.depto.getId() == nulo) {
+			this.deptoDao.adiciona(depto);
+		}else {
+			this.deptoDao.altera(depto);
+		}
+		
 		this.deptos = deptoDao.lista();
 
 		limpaFormularioDoJSF();
 	}
+	
+	
 
-	public void remove (Integer id) {
-		this.depto = this.deptoDao.busca(id);
+	public void remove () {
 		this.deptoDao.remove(this.depto);
 		
 		this.deptos = deptoDao.lista();
@@ -41,9 +50,13 @@ public class DeptoBean implements Serializable {
 		limpaFormularioDoJSF();
 	}
 	
+	
+	
 	public void limpaFormularioDoJSF() {
 		this.depto = new Depto();
 	}
+	
+	
 	
 	
 	// Getters e Setters
