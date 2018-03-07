@@ -29,7 +29,7 @@ public class DeptoDao {  //TODO Como usar o Datasource no TomCat se ele é só u
 	
 	public void remove (Depto depto) {
 		this.manager.remove(depto);
-	}
+	} 
 	
 	
 	

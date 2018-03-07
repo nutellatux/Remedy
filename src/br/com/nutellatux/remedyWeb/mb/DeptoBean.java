@@ -46,8 +46,6 @@ public class DeptoBean implements Serializable {
 	}
 	
 	
-	
-	
 	// Getters e Setters
 
 	public Depto getDepto() {
