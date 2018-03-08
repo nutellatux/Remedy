@@ -8,14 +8,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import br.com.nutellatux.remedyWeb.tipo.Ativo;
+
 @Entity
-public class Depto {//Agora vai
+public class Depto {//Capitulos 12, 14 e 15
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String nome;
 	private String descricao;
+	private Ativo ativo;
  
 	@OneToMany(mappedBy = "depto")
 	private List<SubDepto> subDeptos;
