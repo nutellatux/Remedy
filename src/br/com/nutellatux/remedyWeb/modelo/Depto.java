@@ -9,14 +9,14 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Depto {
+public class Depto {//Agora vai
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String nome;
 	private String descricao;
-
+ 
 	@OneToMany(mappedBy = "depto")
 	private List<SubDepto> subDeptos;
 
