@@ -1,15 +1,13 @@
 package br.com.nutellatux.remedyWeb.modelo;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
-public class Depto {
+public class SubDepto {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,8 +15,8 @@ public class Depto {
 	private String nome;
 	private String descricao;
 
-	@OneToMany(mappedBy = "depto")
-	private List<SubDepto> subDeptos;
+	@ManyToOne
+	private Depto depto;
 
 	public int getId() {
 		return id;
@@ -44,14 +42,16 @@ public class Depto {
 		this.descricao = descricao;
 	}
 
-	public List<SubDepto> getSubDeptos() {
-		return subDeptos;
+	public Depto getDepto() {
+		return depto;
 	}
 
-	public void setSubDeptos(List<SubDepto> subDeptos) {
-		this.subDeptos = subDeptos;
+	public void setDepto(Depto depto) {
+		this.depto = depto;
 	}
-
 	
+	
+
+
 
 }
