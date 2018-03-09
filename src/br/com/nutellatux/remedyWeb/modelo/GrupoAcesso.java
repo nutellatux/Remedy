@@ -3,17 +3,14 @@ package br.com.nutellatux.remedyWeb.modelo;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 import br.com.nutellatux.remedyWeb.tipo.Ativo;
 
 @Entity
-public class SubDepto implements Serializable{
+public class GrupoAcesso implements Serializable{
 
 	/**
 	 * 
@@ -24,12 +21,7 @@ public class SubDepto implements Serializable{
 	private int id;
 	private String nome;
 	private String descricao;
-
-	@Enumerated(EnumType.STRING)
 	private Ativo ativo;
-
-	@ManyToOne
-	private Depto depto;
 
 	public int getId() {
 		return id;
@@ -53,14 +45,6 @@ public class SubDepto implements Serializable{
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
-	}
-
-	public Depto getDepto() {
-		return depto;
-	}
-
-	public void setDepto(Depto depto) {
-		this.depto = depto;
 	}
 
 	public Ativo getAtivo() {

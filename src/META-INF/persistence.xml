@@ -8,7 +8,12 @@
 
 		<jta-data-source>java:/remedyDS</jta-data-source>
 
-		<class>br.com.nutellatux.remedyWeb.modelo</class>
+		<class>br.com.nutellatux.remedyWeb.modelo.DadosProfissionais</class>
+		<class>br.com.nutellatux.remedyWeb.modelo.Depto</class>
+		<class>br.com.nutellatux.remedyWeb.modelo.GrupoAcesso</class>
+		<class>br.com.nutellatux.remedyWeb.modelo.Pessoa</class>
+		<class>br.com.nutellatux.remedyWeb.modelo.SubDepto</class>
+		<class>br.com.nutellatux.remedyWeb.modelo.Usuario</class>
 
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
