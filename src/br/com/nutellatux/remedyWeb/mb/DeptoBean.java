@@ -28,8 +28,7 @@ public class DeptoBean implements Serializable {
 	 
 	
 	public void grava() {
-		Integer nulo = null;
-		if (this.depto.getId() == nulo) {
+		if (this.depto.getId() == 0) {
 			this.deptoDao.adiciona(depto);
 		}else {
 			this.deptoDao.altera(depto);
